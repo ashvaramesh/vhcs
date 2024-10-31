@@ -28,6 +28,9 @@
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 
+   <!-- Font Awesome CDN for social icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    <!-- script
    ================================================== -->
    <script src="js/modernizr.js"></script>
@@ -39,24 +42,35 @@
    <style>
       /* Custom Styles for D128 STEAM Showcase */
 
-      /* Gradient Background for Hero Section */
+      /* Gradient Background for Hero Section replaced with image */
       #hero-d128 {
           height: 100vh;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          /* Replace the gradient with an image or GIF */
+          background: url("images/hero-background.gif") no-repeat center center;
+          background-size: cover;
           color: #fff;
           text-align: center;
           position: relative;
           overflow: hidden;
       }
 
+      /* Make "D128 STEAM Showcase" text huge and visually appealing */
+      #hero-d128 h1 {
+          font-size: 4em; /* Adjust as needed */
+          font-weight: bold;
+          text-transform: uppercase;
+          text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+          margin-bottom: 20px;
+      }
+
       /* Logo Image */
       #hero-d128 .logo-image {
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
           margin-bottom: 20px;
           /* Placeholder for logo */
           background: url("images/logoVHCS.png") no-repeat center;
@@ -70,25 +84,67 @@
 
       #hero-d128 .buttons a {
           display: inline-block;
-          margin: 0 10px;
-          padding: 15px 30px;
+          margin: 0 15px;
+          padding: 15px 40px;
           background-color: #ff7e5f;
           color: #fff;
           text-decoration: none;
-          border-radius: 5px;
-          font-size: 16px;
-          transition: background-color 0.3s ease;
+          border-radius: 30px;
+          font-size: 18px;
+          font-weight: bold;
+          transition: background-color 0.3s ease, transform 0.3s ease;
       }
 
       #hero-d128 .buttons a:hover {
           background-color: #feb47b;
+          transform: scale(1.05);
       }
 
       /* Animated Introduction */
       #introduction {
-          padding: 60px 20px;
-          background-color: #f5f5f5;
+          padding: 80px 20px;
+          /* Add moving gradient background */
+          background: linear-gradient(-45deg, #f3ec78, #af4261, #f3ec78, #af4261);
+          background-size: 400% 400%;
+          animation: gradientBG 15s ease infinite;
           text-align: center;
+          color: #fff;
+      }
+
+      /* Sponsorship Invitation */
+      #sponsorship {
+          padding: 80px 20px;
+          /* Add moving gradient background */
+          background: linear-gradient(-45deg, #a8edea, #fed6e3, #a8edea, #fed6e3);
+          background-size: 400% 400%;
+          animation: gradientBG 20s ease infinite;
+          text-align: center;
+          color: #fff;
+      }
+
+      /* Rubric, Prizes, Q&A Sections */
+      .info-section {
+          padding: 80px 20px;
+          /* Add moving gradient background */
+          background: linear-gradient(-45deg, #d4fc79, #96e6a1, #d4fc79, #96e6a1);
+          background-size: 400% 400%;
+          animation: gradientBG 25s ease infinite;
+          text-align: center;
+          color: #fff;
+      }
+
+      .info-section h2 {
+          margin-bottom: 30px;
+          font-size: 28px;
+          color: #fff;
+      }
+
+      .info-section p {
+          max-width: 800px;
+          margin: 0 auto;
+          font-size: 18px;
+          line-height: 1.6;
+          color: #f0f0f0;
       }
 
       /* Carousels */
@@ -96,61 +152,115 @@
       .judges-carousel img {
           width: 100%;
           height: auto;
-          padding: 10px;
+          padding: 15px;
           background-color: #fff;
-          border-radius: 5px;
+          border-radius: 10px;
       }
 
-      /* Sponsorship Invitation */
-      #sponsorship {
+      /* Centering text and increasing spacing for Sponsors and Judges */
+      #sponsors h2,
+      #judges h2 {
           text-align: center;
-          padding: 40px 20px;
-          background-color: #fff;
-      }
-
-      #sponsorship a {
-          color: #ff7e5f;
-          text-decoration: none;
-          font-weight: bold;
-      }
-
-      #timeline {
-          padding: 60px 20px;
-          background-color: #f5f5f5;
-          text-align: center;
-      }
-
-      /* Rubric, Prizes, Q&A Sections */
-      .info-section {
-          padding: 40px 20px;
-          text-align: center;
-          background-color: #fff;
-      }
-
-      .info-section h2 {
-          margin-bottom: 20px;
-          font-size: 24px;
+          margin-bottom: 40px;
+          font-size: 32px;
           color: #333;
       }
 
-      .info-section p {
+      #sponsors, #judges {
+          padding: 60px 20px;
+          text-align: center;
+      }
+
+      /* Timeline Section */
+      #timeline {
+          padding: 80px 20px;
+          background: linear-gradient(-45deg, #89f7fe, #66a6ff, #89f7fe, #66a6ff);
+          background-size: 400% 400%;
+          animation: gradientBG 30s ease infinite;
+          text-align: center;
+          color: #fff;
+      }
+
+      #timeline h2 {
+          margin-bottom: 30px;
+          font-size: 28px;
+          color: #fff;
+      }
+
+      #timeline .timeline-container {
           max-width: 800px;
           margin: 0 auto;
-          color: #666;
+      }
+
+      .timeline-item {
+          margin-bottom: 40px;
+      }
+
+      .timeline-item h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+      }
+
+      .timeline-item p {
+          font-size: 18px;
+          line-height: 1.6;
+      }
+
+      /* Moving Gradient Animation */
+      @keyframes gradientBG {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+      }
+
+      /* Adjust general section spacing */
+      section {
+          margin-bottom: 60px;
+      }
+
+      /* Ensure carousels are centered */
+      .sponsors-carousel, .judges-carousel {
+          max-width: 1200px;
+          margin: 0 auto;
       }
 
       /* Responsive Adjustments */
       @media (max-width: 768px) {
-          #hero-d128 .logo-image {
-              width: 100px;
-              height: 100px;
+          #hero-d128 h1 {
+              font-size: 2.5em;
           }
 
           #hero-d128 .buttons a {
-              padding: 10px 20px;
-              font-size: 14px;
+              padding: 12px 30px;
+              font-size: 16px;
+              margin: 0 10px;
+          }
+
+          .info-section h2,
+          #sponsors h2,
+          #judges h2,
+          #timeline h2 {
+              font-size: 24px;
+          }
+
+          .info-section p,
+          #timeline .timeline-item p {
+              font-size: 16px;
+          }
+
+          .sponsors-carousel img,
+          .judges-carousel img {
+              padding: 10px;
+          }
+
+          #introduction,
+          #sponsorship,
+          .info-section,
+          #timeline {
+              padding: 60px 10px;
           }
       }
+
    </style>
 
 </head>
@@ -161,7 +271,7 @@
    ================================================== -->
    <header id="main-header">
 
-   	<div class="row">
+    	<div class="row">
 
 	      <div class="logo">
 	         <a href="index.html">VHCS</a>
@@ -198,11 +308,11 @@
    <!-- D128 STEAM Showcase Hero Section
    ================================================== -->
    <section id="hero-d128">	
-   	  
+        	  
 		<div class="logo-image" data-aos="fade-down"></div>
 
 		<h1 data-aos="fade-up">D128 STEAM Showcase</h1>	
-    		
+		
 		<div class="buttons" data-aos="fade-up" data-aos-delay="200">
 			<a href="https://docs.google.com/document/d/your-google-doc-link" target="_blank">Learn More</a>
 			<a href="https://forms.gle/your-google-form-link" target="_blank">Apply</a>
@@ -320,7 +430,7 @@
 
       	<div class="twelve columns content group">
       		
-				<ul class="social-links">
+			<ul class="social-links">
                <li><a href="https://www.instagram.com/yourinstagramaccount" target="_blank"><i class="fa fa-instagram"></i></a></li>
             </ul>
 
@@ -330,7 +440,7 @@
 
             	<div class="footer-logo"></div>
 
-	            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+	            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
 	            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
 	            nibh id elit. 
 	            </p>	        
@@ -377,8 +487,8 @@
    <script>
      // Initialize AOS
      AOS.init({
-       duration: 1000,
-       once: true
+       duration: 1000, // Animation duration in milliseconds
+       once: true      // Whether animation should happen only once - while scrolling down
      });
 
      // Initialize Slick Carousel for Sponsors
