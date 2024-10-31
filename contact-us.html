@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Us - VHCS</title>
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.min.css">
+   <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+   <!-- Header -->
+   <header id="main-header">
+      <div class="row">
+         <div class="logo">
+            <a href="index.html">VHCS</a>
+         </div>
+         <nav id="nav-wrap">         
+            <ul id="nav" class="nav">
+               <li><a href="index.html">Home</a></li>
+               <li><a href="girls-who-code.html">Girls Who Code</a></li>
+               <li><a href="d128-steam-showcase.html">D128 STEAM Showcase</a></li>
+               <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Contact Us Content -->
+   <section id="contact-us">
+      <div class="row section-head">
+         <div class="twelve columns">
+            <h1>Contact Us<span>.</span></h1>
+            <hr />        
+         </div>
+      </div>
+
+      <div class="row">
+         <div id="contact-form" class="six columns tab-whole left">
+            <form name="contactForm" id="contactForm" method="post" action="">
+               <fieldset>
+                  <div class="group">
+                     <input name="contactName" type="text" id="contactName" placeholder="Name" required />
+                  </div>
+                  <div>
+                     <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" required />
+                  </div>
+                  <div>
+                     <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" />
+                  </div>                       
+                  <div>
+                     <textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10" required></textarea>
+                  </div>                      
+                  <div>
+                     <button class="submitform">Submit</button>
+                  </div>
+               </fieldset>
+            </form>
+            <div id="message-warning"></div>
+            <div id="message-success">
+               <i class="icon-ok"></i>Your message was sent, thank you!
+            </div>
+         </div>
+
+         <div class="six columns tab-whole right">
+            <p class="lead">If you have any questions or need more information about VHCS, feel free to reach out to us using the form or through the contact details below.</p>
+            <h3>Visit Us</h3>
+            <p>
+               1600 Amphitheatre Parkway<br>
+               Mountain View, CA<br>
+               94043 US
+            </p>
+            <h3>Contact Numbers:</h3>
+            <p>Phone: (000) 555 1212<br>
+               Mobile: (000) 555 0100<br>
+               Fax: (000) 555 0101
+            </p>
+         </div>     
+      </div>
+   </section>
+
+   <!-- Footer -->
+   <footer>
+      <div class="row">  
+         <ul class="copyright">
+            <li>&copy; Copyright 2024 VHCS.</li> 
+            <li>Design by Styleshout.</li>
+         </ul>
+      </div>
+   </footer>
+
+   <script src="js/jquery-1.11.3.min.js"></script>
+   <script src="js/jquery.flexslider-min.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+</html>
