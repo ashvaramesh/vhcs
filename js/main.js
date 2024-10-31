@@ -11,7 +11,7 @@
 	/*---------------------------------------------------- */
 	/* Preloader
 	------------------------------------------------------ */ 
-   $(window).load(function() {
+   $(window).on('load', function() {
 
       // will first fade out the loading animation 
     	$("#loader").fadeOut("slow", function(){
@@ -21,15 +21,15 @@
 
       });       
 
-  	})
+   });
 
 
-  	/*----------------------------------------------------*/
-  	/* Flexslider
-  	/*----------------------------------------------------*/
-  	$(window).load(function() {
+   /*----------------------------------------------------*/
+   /* Flexslider
+   /*----------------------------------------------------*/
+   $(window).on('load', function() {
 
-	  	$('#hero-slider').flexslider({
+	   $('#hero-slider').flexslider({
 	   	namespace: "flex-",
 	      controlsContainer: ".hero-container",
 	      animation: 'fade',
@@ -46,29 +46,29 @@
 			},
 			start: function(slider){
 			   $(slider).find(".flex-active-slide")
-			           	.find("h1").addClass("animated fadeInDown show")
-			           	.next().addClass("animated fadeInUp show");
-			           		
+			          	.find("h1").addClass("animated fadeInDown show")
+			          	.next().addClass("animated fadeInUp show");
+			          		
 			   $(window).trigger('resize');		  			 
 			},
 			after: function(slider){
 			 	$(slider).find(".flex-active-slide")
-			           	.find("h1").addClass("animated fadeInDown show")
-			           	.next().addClass("animated fadeInUp show");			  
+			          	.find("h1").addClass("animated fadeInDown show")
+			          	.next().addClass("animated fadeInUp show");			  
 			}
-	   });
+   });
 
-	   $('#testimonial-slider').flexslider({
-	   	namespace: "flex-",
-	      controlsContainer: "",
-	      animation: 'slide',
-	      controlNav: true,
-	      directionNav: false,
-	      smoothHeight: true,
-	      slideshowSpeed: 7000,
-	      animationSpeed: 600,
-	      randomize: false,
-	   });
+   $('#testimonial-slider').flexslider({
+   	namespace: "flex-",
+      controlsContainer: "",
+      animation: 'slide',
+      controlNav: true,
+      directionNav: false,
+      smoothHeight: true,
+      slideshowSpeed: 7000,
+      animationSpeed: 600,
+      randomize: false,
+   });
 
    });
 
@@ -98,8 +98,8 @@
 
 
    /*----------------------------------------------------*/
-  	/* Highlight the current section in the navigation bar
-  	------------------------------------------------------*/
+   /* Highlight the current section in the navigation bar
+   ------------------------------------------------------*/
 	var sections = $("section"),
 	navigation_links = $("#nav-wrap a");	
 
@@ -126,68 +126,140 @@
 
 
    /*----------------------------------------------------*/
-  	/* FitText Settings
-  	------------------------------------------------------ */
-  	setTimeout(function() {
+   /* FitText Settings
+   ------------------------------------------------------ */
+   setTimeout(function() {
 
    	$('#hero-slider h1').fitText(1, { minFontSize: '30px', maxFontSize: '49px' });
 
-  	}, 100);
+   }, 100);
 
 
-  	/*-----------------------------------------------------*/
-  	/* Mobile Menu
-   ------------------------------------------------------ */  
+   /*-----------------------------------------------------*/
+   /* Mobile Menu
+ ------------------------------------------------------ */  
    var menu_icon = $("<span class='menu-icon'>Menu</span>");
-  	var toggle_button = $("<a>", {                         
+   var toggle_button = $("<a>", {                         
                         id: "toggle-btn", 
                         html : "",
                         title: "Menu",
                         href : "#" } 
                         );
-  	var nav_wrap = $('nav#nav-wrap')
-  	var nav = $("ul#nav");  
+   var nav_wrap = $('nav#nav-wrap')
+   var nav = $("ul#nav");  
    
    /* if JS is enabled, remove the two a.mobile-btns 
-  	and dynamically prepend a.toggle-btn to #nav-wrap */
-  	nav_wrap.find('a.mobile-btn').remove(); 
-  	toggle_button.append(menu_icon); 
+   and dynamically prepend a.toggle-btn to #nav-wrap */
+   nav_wrap.find('a.mobile-btn').remove(); 
+   toggle_button.append(menu_icon); 
    nav_wrap.prepend(toggle_button); 
 
-  	toggle_button.on("click", function(e) {
+   toggle_button.on("click", function(e) {
    	e.preventDefault();
     	nav.slideToggle("fast");     
-  	});
+   });
 
-  	if (toggle_button.is(':visible')) nav.addClass('mobile');
-  	$(window).resize(function() {
+   if (toggle_button.is(':visible')) nav.addClass('mobile');
+   $(window).on('resize', function() {
    	if (toggle_button.is(':visible')) nav.addClass('mobile');
     	else nav.removeClass('mobile');
-  	});
+   });
 
-  	$('ul#nav li a').on("click", function() {      
+   $('ul#nav li a').on("click", function() {      
    	if (nav.hasClass('mobile')) nav.fadeOut('fast');      
-  	});
+   });
 
 
-  	/*----------------------------------------------------*/
-  	/* Smooth Scrolling
-  	------------------------------------------------------ */
-  	$('.smoothscroll').on('click', function (e) {
-	 	
-	 	e.preventDefault();
+   /*----------------------------------------------------*/
+   /* Smooth Scrolling
+   ------------------------------------------------------ */
+   $('.smoothscroll').on('click', function (e) {
+   	
+   	e.preventDefault();
 
-   	var target = this.hash,
-    	$target = $(target);
+    var target = this.hash,
+    $target = $(target);
 
-    	$('html, body').stop().animate({
-       	'scrollTop': $target.offset().top
-      }, 800, 'swing', function () {
-      	window.location.hash = target;
-      });
+   	$('html, body').stop().animate({
+     	'scrollTop': $target.offset().top
+    }, 800, 'swing', function () {
+    	window.location.hash = target;
+    });
 
-  	});  
-  
+   });  
+
+
+   /*----------------------------------------------------*/
+	/* Initialize AOS
+	------------------------------------------------------ */
+   // Initialize AOS
+   AOS.init({
+     duration: 1000, // Animation duration
+     once: true      // Whether animation should happen only once - while scrolling down
+   });
+
+
+   /*----------------------------------------------------*/
+	/* Initialize Slick Carousel
+	------------------------------------------------------ */
+   // Initialize Slick Carousel for Sponsors if the carousel exists
+   if ($('.sponsors-carousel').length) {
+     $('.sponsors-carousel').slick({
+       slidesToShow: 4,
+       slidesToScroll: 1,
+       autoplay: true,
+       autoplaySpeed: 2000,
+       arrows: false,
+       dots: false,
+       responsive: [
+         {
+           breakpoint: 1024,
+           settings: {
+             slidesToShow: 3,
+           }
+         },
+         {
+           breakpoint: 600,
+           settings: {
+             slidesToShow: 2,
+           }
+         },
+         {
+           breakpoint: 480,
+           settings: {
+             slidesToShow: 1,
+           }
+         }
+       ]
+     });
+   }
+
+   // Initialize Slick Carousel for Judges if the carousel exists
+   if ($('.judges-carousel').length) {
+     $('.judges-carousel').slick({
+       slidesToShow: 3,
+       slidesToScroll: 1,
+       autoplay: true,
+       autoplaySpeed: 2500,
+       arrows: false,
+       dots: false,
+       responsive: [
+         {
+           breakpoint: 1024,
+           settings: {
+             slidesToShow: 2,
+           }
+         },
+         {
+           breakpoint: 600,
+           settings: {
+             slidesToShow: 1,
+           }
+         }
+       ]
+     });
+   }
+
 
    /*----------------------------------------------------*/
 	/*	Modal Popup
@@ -213,8 +285,8 @@
 	------------------------------------------------------ */  	 
 	$('input, textarea').placeholder()  
 
-   
-	/*----------------------------------------------------*/
+
+   /*----------------------------------------------------*/
 	/*	contact form
 	------------------------------------------------------*/
 
@@ -265,6 +337,5 @@
   		}
 
 	});
-	
 
 })(jQuery);
