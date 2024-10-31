@@ -63,7 +63,6 @@
           font-size: 4em; /* Adjust as needed */
           font-weight: bold;
           text-transform: uppercase;
-          text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
           margin-bottom: 20px;
       }
 
@@ -90,8 +89,9 @@
           color: #fff;
           text-decoration: none;
           border-radius: 30px;
-          font-size: 18px;
+          font-size: 2em;
           font-weight: bold;
+          text-transform: uppercase;
           transition: background-color 0.3s ease, transform 0.3s ease;
       }
 
@@ -119,7 +119,11 @@
           background-size: 400% 400%;
           animation: gradientBG 20s ease infinite;
           text-align: center;
-          color: #fff;
+          color: #000;
+      }
+
+      #sponsorship a {
+          text-decoration: underline;
       }
 
       /* Rubric, Prizes, Q&A Sections */
@@ -130,13 +134,13 @@
           background-size: 400% 400%;
           animation: gradientBG 25s ease infinite;
           text-align: center;
-          color: #fff;
+          color: #000;
       }
 
       .info-section h2 {
           margin-bottom: 30px;
           font-size: 28px;
-          color: #fff;
+          color: #000;
       }
 
       .info-section p {
@@ -144,7 +148,7 @@
           margin: 0 auto;
           font-size: 18px;
           line-height: 1.6;
-          color: #f0f0f0;
+          color: #000;
       }
 
       /* Carousels */
@@ -163,20 +167,21 @@
           text-align: center;
           margin-bottom: 40px;
           font-size: 32px;
-          color: #333;
+          color: #fff;
       }
 
       #sponsors, #judges {
-          padding: 60px 20px;
+          padding: 40px 20px;
           text-align: center;
       }
 
       /* Timeline Section */
       #timeline {
           padding: 80px 20px;
-          background: linear-gradient(-45deg, #89f7fe, #66a6ff, #89f7fe, #66a6ff);
+          /* Add moving gradient background matching #sponsorship */
+          background: linear-gradient(-45deg, #a8edea, #fed6e3, #a8edea, #fed6e3);
           background-size: 400% 400%;
-          animation: gradientBG 30s ease infinite;
+          animation: gradientBG 20s ease infinite;
           text-align: center;
           color: #fff;
       }
@@ -271,36 +276,36 @@
    ================================================== -->
    <header id="main-header">
 
-    	<div class="row">
+      <div class="row">
 
-	      <div class="logo">
-	         <a href="index.html">VHCS</a>
-	      </div>
+         <div class="logo">
+            <a href="index.html">VHCS</a>
+         </div>
 
-	      <nav id="nav-wrap">         
-	         
-	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
-	         	<span class="menu-icon">Menu</span>
-	         </a>
-         	<a class="mobile-btn" href="#" title="Hide navigation">
-         		<span class="menu-icon">Menu</span>
-         	</a>            
+         <nav id="nav-wrap">         
+            
+            <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+               <span class="menu-icon">Menu</span>
+            </a>
+            <a class="mobile-btn" href="#" title="Hide navigation">
+               <span class="menu-icon">Menu</span>
+            </a>            
 
-	         <ul id="nav" class="nav">
-	            <li><a class="smoothscroll" href="index.html#hero">Home</a></li>
-	            <li><a href="girls-who-code.html">Girls Who Code</a></li>
-	        	<li><a href="d128-steam-showcase.html">D128 STEAM Showcase</a></li>
-				<li><a href="contact-us.html">Contact Us</a></li>
+            <ul id="nav" class="nav">
+               <li><a class="smoothscroll" href="index.html#hero">Home</a></li>
+               <li><a href="girls-who-code.html">Girls Who Code</a></li>
+               <li><a href="d128-steam-showcase.html">D128 STEAM Showcase</a></li>
+               <li><a href="contact-us.html">Contact Us</a></li>
 
-	         </ul> <!-- end #nav -->
+            </ul> <!-- end #nav -->
 
-	      </nav> <!-- end #nav-wrap -->
+         </nav> <!-- end #nav-wrap -->
 
-	      <ul class="header-social">
-	        	<li><a href="https://www.instagram.com/yourinstagramaccount" target="_blank"><i class="fa fa-instagram"></i></a></li>
-	      </ul>      
+         <ul class="header-social">
+               <li><a href="https://www.instagram.com/yourinstagramaccount" target="_blank"><i class="fa fa-instagram"></i></a></li>
+         </ul>      
 
-	   </div>
+      </div>
 
    </header> <!-- end header -->
 
@@ -308,15 +313,15 @@
    <!-- D128 STEAM Showcase Hero Section
    ================================================== -->
    <section id="hero-d128">	
-        	  
-		<div class="logo-image" data-aos="fade-down"></div>
+            
+      <div class="logo-image" data-aos="fade-down"></div>
 
-		<h1 data-aos="fade-up">D128 STEAM Showcase</h1>	
-		
-		<div class="buttons" data-aos="fade-up" data-aos-delay="200">
-			<a href="https://docs.google.com/document/d/your-google-doc-link" target="_blank">Learn More</a>
-			<a href="https://forms.gle/your-google-form-link" target="_blank">Apply</a>
-		</div>
+      <h1 data-aos="fade-up">D128 STEAM Showcase</h1>	
+      
+      <div class="buttons" data-aos="fade-up" data-aos-delay="200">
+         <a href="https://docs.google.com/document/d/your-google-doc-link" target="_blank">Learn More</a>
+         <a href="https://forms.gle/your-google-form-link" target="_blank">Apply</a>
+      </div>
 
    </section> <!-- end hero-d128 -->
 
@@ -428,9 +433,9 @@
 
       <div class="row">  
 
-      	<div class="twelve columns content group">
-      		
-			<ul class="social-links">
+         <div class="twelve columns content group">
+            
+            <ul class="social-links">
                <li><a href="https://www.instagram.com/yourinstagramaccount" target="_blank"><i class="fa fa-instagram"></i></a></li>
             </ul>
 
@@ -438,20 +443,20 @@
 
             <div class="info">
 
-            	<div class="footer-logo"></div>
+               <div class="footer-logo"></div>
 
-	            <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-	            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-	            nibh id elit. 
-	            </p>	        
+               <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+               Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+               nibh id elit. 
+               </p>	        
    
-	         </div>
+            </div>
 
-      	</div>           
+         </div>           
 
          <ul class="copyright">
-         	<li>&copy; Copyright 2024 VHCS.</li> 
-         	<li>Design by <a href="http://www.styleshout.com/">Styleshout.</a>.</li>
+            <li>&copy; Copyright 2024 VHCS.</li> 
+            <li>Design by <a href="http://www.styleshout.com/">Styleshout.</a>.</li>
          </ul>
 
          <div id="go-top">
@@ -463,7 +468,7 @@
    </footer> <!-- end footer -->
 
    <div id="preloader"> 
-       	<div id="loader"></div>
+         <div id="loader"></div>
    </div> 
 
    <!-- Java Script
