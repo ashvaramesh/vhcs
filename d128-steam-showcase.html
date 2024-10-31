@@ -89,10 +89,11 @@
           color: #fff;
           text-decoration: none;
           border-radius: 30px;
-          font-size: 2em;
+          font-size: 1em; /* Reduced size */
           font-weight: bold;
-          text-transform: uppercase;
+          /* Removed text-transform */
           transition: background-color 0.3s ease, transform 0.3s ease;
+          font-family: inherit; /* Ensure same font */
       }
 
       #hero-d128 .buttons a:hover {
@@ -122,8 +123,14 @@
           color: #000;
       }
 
+      #sponsorship p {
+          font-size: 1.5em; /* Increased font size */
+          font-family: inherit; /* Ensure same font */
+      }
+
       #sponsorship a {
           text-decoration: underline;
+          color: #000;
       }
 
       /* Rubric, Prizes, Q&A Sections */
@@ -161,7 +168,7 @@
           border-radius: 10px;
       }
 
-      /* Centering text and increasing spacing for Sponsors and Judges */
+      /* Centering text and adjusting spacing for Sponsors and Judges */
       #sponsors h2,
       #judges h2 {
           text-align: center;
@@ -173,6 +180,15 @@
       #sponsors, #judges {
           padding: 40px 20px;
           text-align: center;
+      }
+
+      /* Adjust spacing between Sponsors and Judges */
+      #sponsors {
+          margin-bottom: 20px;
+      }
+
+      #judges {
+          margin-top: 20px;
       }
 
       /* Timeline Section */
