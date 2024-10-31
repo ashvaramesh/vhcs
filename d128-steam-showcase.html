@@ -58,13 +58,14 @@
           overflow: hidden;
       }
 
-      /* Make "D128 STEAM Showcase" text huge and visually appealing */
+      /* Make "D128 STEAM Showcase" text even bigger and visually appealing */
       #hero-d128 h1 {
-          font-size: 4em; /* Adjust as needed */
+          font-size: 5em; /* Increased from 4em */
           font-weight: bold;
           text-transform: uppercase;
-          text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+          text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
           margin-bottom: 20px;
+          line-height: 1.2;
       }
 
       /* Logo Image */
@@ -104,9 +105,9 @@
       #introduction {
           padding: 80px 20px;
           /* Add moving gradient background */
-          background: linear-gradient(-45deg, #f3ec78, #af4261, #f3ec78, #af4261);
+          background: linear-gradient(-45deg, #a8edea, #fed6e3, #a8edea, #fed6e3);
           background-size: 400% 400%;
-          animation: gradientBG 15s ease infinite;
+          animation: gradientBG 20s ease infinite;
           text-align: center;
           color: #fff;
       }
@@ -119,16 +120,16 @@
           background-size: 400% 400%;
           animation: gradientBG 20s ease infinite;
           text-align: center;
-          color: #fff;
+          color: #000; /* Changed to black */
       }
 
       /* Rubric, Prizes, Q&A Sections */
       .info-section {
           padding: 80px 20px;
-          /* Add moving gradient background */
-          background: linear-gradient(-45deg, #d4fc79, #96e6a1, #d4fc79, #96e6a1);
+          /* Apply the same gradient as #sponsorship */
+          background: linear-gradient(-45deg, #a8edea, #fed6e3, #a8edea, #fed6e3);
           background-size: 400% 400%;
-          animation: gradientBG 25s ease infinite;
+          animation: gradientBG 20s ease infinite;
           text-align: center;
           color: #fff;
       }
@@ -163,20 +164,22 @@
           text-align: center;
           margin-bottom: 40px;
           font-size: 32px;
-          color: #333;
+          color: #fff; /* Changed to white */
       }
 
       #sponsors, #judges {
           padding: 60px 20px;
           text-align: center;
+          color: #fff; /* Ensure text is white */
       }
 
       /* Timeline Section */
       #timeline {
           padding: 80px 20px;
-          background: linear-gradient(-45deg, #89f7fe, #66a6ff, #89f7fe, #66a6ff);
+          /* Apply the same gradient as #sponsorship */
+          background: linear-gradient(-45deg, #a8edea, #fed6e3, #a8edea, #fed6e3);
           background-size: 400% 400%;
-          animation: gradientBG 30s ease infinite;
+          animation: gradientBG 20s ease infinite;
           text-align: center;
           color: #fff;
       }
@@ -215,7 +218,7 @@
 
       /* Adjust general section spacing */
       section {
-          margin-bottom: 60px;
+          margin-bottom: 40px; /* Reduced from 60px */
       }
 
       /* Ensure carousels are centered */
@@ -224,10 +227,33 @@
           margin: 0 auto;
       }
 
+      /* Adjusted spacing between Sponsors and Judges */
+      #sponsors {
+          margin-bottom: 20px; /* Reduced spacing */
+      }
+
+      /* Enhanced "Want to Sponsor us? Contact Us" text */
+      #sponsorship p {
+          font-size: 24px; /* Increased font size */
+      }
+
+      #sponsorship a {
+          color: #0000FF; /* Blue color for "Contact Us" */
+          text-decoration: none;
+          font-weight: bold;
+          /* Glowing effect */
+          text-shadow: 0 0 10px #0000FF, 0 0 20px #0000FF, 0 0 30px #0000FF;
+          transition: text-shadow 0.3s ease;
+      }
+
+      #sponsorship a:hover {
+          text-shadow: 0 0 20px #0000FF, 0 0 30px #0000FF, 0 0 40px #0000FF;
+      }
+
       /* Responsive Adjustments */
       @media (max-width: 768px) {
           #hero-d128 h1 {
-              font-size: 2.5em;
+              font-size: 3em; /* Adjusted for smaller screens */
           }
 
           #hero-d128 .buttons a {
@@ -260,7 +286,6 @@
               padding: 60px 10px;
           }
       }
-
    </style>
 
 </head>
@@ -273,34 +298,34 @@
 
     	<div class="row">
 
-	      <div class="logo">
-	         <a href="index.html">VHCS</a>
-	      </div>
+    	  <div class="logo">
+    	     <a href="index.html">VHCS</a>
+    	  </div>
 
-	      <nav id="nav-wrap">         
-	         
-	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
-	         	<span class="menu-icon">Menu</span>
-	         </a>
+    	  <nav id="nav-wrap">         
+    	         
+    	     <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+    	     	<span class="menu-icon">Menu</span>
+    	     </a>
          	<a class="mobile-btn" href="#" title="Hide navigation">
          		<span class="menu-icon">Menu</span>
          	</a>            
 
-	         <ul id="nav" class="nav">
-	            <li><a class="smoothscroll" href="index.html#hero">Home</a></li>
-	            <li><a href="girls-who-code.html">Girls Who Code</a></li>
-	        	<li><a href="d128-steam-showcase.html">D128 STEAM Showcase</a></li>
+    	     <ul id="nav" class="nav">
+    	        <li><a class="smoothscroll" href="index.html#hero">Home</a></li>
+    	        <li><a href="girls-who-code.html">Girls Who Code</a></li>
+    	    	<li><a href="d128-steam-showcase.html">D128 STEAM Showcase</a></li>
 				<li><a href="contact-us.html">Contact Us</a></li>
 
-	         </ul> <!-- end #nav -->
+    	     </ul> <!-- end #nav -->
 
-	      </nav> <!-- end #nav-wrap -->
+    	  </nav> <!-- end #nav-wrap -->
 
-	      <ul class="header-social">
-	        	<li><a href="https://www.instagram.com/yourinstagramaccount" target="_blank"><i class="fa fa-instagram"></i></a></li>
-	      </ul>      
+    	  <ul class="header-social">
+    	    	<li><a href="https://www.instagram.com/yourinstagramaccount" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    	  </ul>      
 
-	   </div>
+    	</div>
 
    </header> <!-- end header -->
 
@@ -321,21 +346,18 @@
    </section> <!-- end hero-d128 -->
 
 
-   <!-- Animated Introduction Section
-   ================================================== -->
-   <section id="introduction" data-aos="fade-up">
+   <!-- Showcase Section (Indented Below Hero) -->
+   <section id="showcase" data-aos="fade-up">
 
-      <h2>Show us your STEAM skills.</h2>
+      <div class="row">
+         <div class="twelve columns">
+            <h2>Our Latest Events</h2>
+            <hr />
+            <p>The VHCS Computer Science Club empowers students to explore and develop their skills in coding, problem-solving, and technology. We organize workshops, coding challenges, and collaborative projects to enhance members’ understanding of computer science concepts.</p>
+         </div>
+      </div>
 
-      <p>
-         Whether that be in Science, Tech, Engineering, Entrepreneurship, Equity, Arts, or Math, now's your chance to get rewarded for solving real-world problems. You can even use previous projects!
-      </p>
-
-      <p>
-         Impress and win big. Open to all VHHS and LHS students! Your work will be evaluated by local businesses. The highest-rated projects in each division will win the best prizes.
-      </p>
-
-   </section> <!-- end introduction -->
+   </section> <!-- end showcase -->
 
 
    <!-- Sponsors Carousel Section
@@ -444,7 +466,7 @@
 	            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
 	            nibh id elit. 
 	            </p>	        
-   
+
 	         </div>
 
       	</div>           
